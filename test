@@ -1,0 +1,166 @@
+<center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vehicle Repair Selector</title>
+<style>
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .page {
+    display: none;
+  }
+  .page.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <h1>Vehicle Quote Repair Selector</h1>
+  <form id="repairForm">
+    <div class="page active" id="page1">
+      <label for="vehicleModel">Vehicle Model:</label>
+      <select id="vehicleModel" required>
+        <option value="">-- Select --</option>
+       <option value="Toyota">Toyota</option>
+<option value="Honda">Honda</option>
+<option value="Nissan">Nissan</option>
+<option value="Subaru">Subaru</option>
+<option value="Mazda">Mazda</option>
+<option value="Mitsubishi">Mitsubishi</option>
+<option value="Hyundai">Hyundai</option>
+<option value="Kia">Kia</option>
+<option value="Volkswagen">Volkswagen</option>
+<option value="BMW">BMW</option>
+<option value="Mercedes-Benz">Mercedes-Benz</option>
+<option value="Audi">Audi</option>
+<option value="Porsche">Porsche</option>
+<option value="Volvo">Volvo</option>
+<option value="Jaguar">Jaguar</option>
+<option value="Land Rover">Land Rover</option>
+<option value="Ferrari">Ferrari</option>
+<option value="Lamborghini">Lamborghini</option>
+<option value="Aston Martin">Aston Martin</option>
+<option value="Rolls-Royce">Rolls-Royce</option>
+<option value="Buick">Buick</option>
+<option value="Cadillac">Cadillac</option>
+<option value="Chevrolet">Chevrolet</option>
+<option value="Dodge">Dodge</option>
+<option value="RAM">RAM</option>
+<option value="Jeep">Jeep</option>
+<option value="GMC">GMC</option>
+<option value="Chrysler">Chrysler</option>
+<option value="Ford">Ford</option>
+<option value="Lincoln">Lincoln</option>
+
+        <!-- Add other options -->
+      </select>
+      <button id="nextPage1">Next</button>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="page" id="page2">
+      <label for="vehicleYear">Vehicle Year:</label>
+      <select id="vehicleYear" required>
+        <!-- Options will be populated dynamically using JavaScript -->
+        <option value="">-- Select --</option>
+      </select>
+      <button id="nextPage2">Next</button>
+    </div>
+    
+    <div class="page" id="page3">
+      <label for="problemArea">Problem Area:</label>
+      <select id="problemArea" required>
+        <option value="">-- Select --</option>
+             <option value="Suspension">Suspension</option>
+      <option value="Motor">Motor</option>
+      <option value="Electronics">Electronics</option>
+      <option value="Tires">Tires</option>
+      <option value="Brakes">Brakes</option>
+      <option value="Fluids">Fluids</option>
+      <option value="Sunroof">Sunroof</option>
+      <option value="Radio/Touchscreen">Radio/Touchscreen</option>
+      <option value="Oil Change">Oil Change</option>
+      <option value="Battery">Battery</option>
+      <option value="Starter">Starter</option>
+      <option value="Filters">Filters</option>
+      <option value="Exhaust">Exhaust</option>
+      <option value="Cooling System">Cooling System</option>
+      <option value="Belts and Hoses">Belts and Hoses</option>
+      <option value="Steering System">Steering System</option>
+      <option value="Fuel System">Fuel System</option>
+      <option value="Check Engine Light">Check Engine Light</option>
+        <!-- Add other options -->
+      </select>
+      <button type="submit">Submit</button>
+    </div>
+
+
+
+
+    
+
+
+
+
+  </form>
+  <div id="message" style="display: none; margin-top: 20px;"></div>
+
+  <script>
+    // JavaScript for handling navigation between pages
+    const pages = document.querySelectorAll('.page');
+    let currentPage = 0;
+
+    document.getElementById('nextPage1').addEventListener('click', function(event) {
+      event.preventDefault();
+      currentPage++;
+      showPage(currentPage);
+    });
+
+    document.getElementById('nextPage2').addEventListener('click', function(event) {
+      event.preventDefault();
+      currentPage++;
+      showPage(currentPage);
+    });
+
+    function showPage(index) {
+      if (index >= 0 && index < pages.length) {
+        pages.forEach(page => page.classList.remove('active'));
+        pages[index].classList.add('active');
+      }
+    }
+
+  // Populate vehicle year dropdown with years from 2025 to 1900
+const vehicleYearSelect = document.getElementById('vehicleYear');
+for (let year = 2025; year >= 1900; year--) {
+  const option = document.createElement('option');
+  option.value = year;
+  option.textContent = year;
+  vehicleYearSelect.appendChild(option);
+}
+
+
+    document.getElementById('repairForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const messageElement = document.getElementById('message');
+      messageElement.textContent = "For a direct price Quote Please Call directly to speak with the Shop at this time 610-943-1147 All calls are answered promptly Monday through Friday 8am-5pm!";
+      messageElement.style.display = 'block';
+    });
+  </script>
+</body>
+</html></center>
